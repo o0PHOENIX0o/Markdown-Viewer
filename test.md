@@ -123,3 +123,4 @@ This line is separates sections.
 - **Horizontal Rules**: Create a horizontal line.
 - **Task Lists**: Indicate tasks with checkboxes.
 - **Footnotes**: Reference footnotes in the text.
+

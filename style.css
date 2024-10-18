@@ -62,6 +62,15 @@ header{
     align-items: center;
 }
 
+.Title{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.Title img{
+    height: 2rem;
+}
+
 .ExportButton{
     font-weight: 700;
     display: flex !important;
