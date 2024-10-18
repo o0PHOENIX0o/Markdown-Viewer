@@ -1,0 +1,370 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #121212; 
+    color: #e0e0e0;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;  
+    height: 4px; 
+    margin: -5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bdbdbd;
+    border-radius: 4px;  
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #e7e7e7; 
+}
+
+*::-webkit-scrollbar-track {
+    background: #333; 
+    border-radius: 4px;  
+}
+
+h1,p{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    background: #272727de;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.ExportButton,
+.title {
+    font-weight: 700;
+    bottom: 0
+}
+
+.ExportButton {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+
+    cursor: pointer;
+    background-color:#333333;
+    padding: 8px 16px;
+    border-radius: 10px;
+    outline: none;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-size: 13px;
+    color: hsl(45, 100%, 72%);
+    box-shadow: 3px 5px 7px 0px hsl(0deg 0% 0% / 83%);
+
+    
+}
+
+
+.ExportButton:hover {
+    background-color: #e26c93
+}
+
+.ExportButton:active {
+    box-shadow: none;
+    bottom: -2px;
+    left: calc(50% + 6px)
+}
+.DropDownButton{
+    position: relative;
+}
+
+.ExportButton ion-icon{
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
+
+.ActiveIcon{
+    transform: rotate(180deg) !important;    
+}
+
+.Options{
+    position: absolute;
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    transition: all 0.5s ease-out;
+}
+
+.Options.active{
+    transform: translate(-50%,0.5rem);
+    top: 2.5rem;
+}
+
+.Options p{
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.Options p:hover{
+    box-shadow: 0 -1px 5px 0px hsl(0deg 0% 0% / 83%);
+    border-bottom: 1px solid #ffcc00;
+    border-bottom: 1px solid #ffcc00;
+}
+
+
+textarea {
+    height: -webkit-fill-available;
+    width:-webkit-fill-available;
+    overflow: auto;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.InputArea:focus-within{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.preview {
+    height: -webkit-fill-available;
+    overflow: auto;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.InputArea, .Markdown{
+    min-width: 15rem;
+}
+
+.InputArea, .Markdown{
+    padding: 1rem;
+    height: 49.2rem;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.preview h1, .preview h2, .preview h3 {
+    color: #e7e7e7; 
+}
+.preview p {
+    line-height: 1.6;
+}
+.preview code {
+    background-color: #313131;
+    color: #eddd9a;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+.preview pre {
+    background-color: #2d2d2d; 
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+.preview blockquote {
+    border-left: 4px solid #ffcc00;
+    padding-left: 10px;
+    color: #cccccc;
+}
+.preview ul {
+    list-style-type: disc;
+}
+.preview ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+.preview a {
+    color: #4ca1ff;
+}
+
+
+
+.preview a:first-child h1,
+.preview a:first-child h2,
+.preview a:first-child h3,
+.preview a:first-child h4,
+.preview a:first-child h5,
+.preview a:first-child h6,
+.preview body>h1:first-child,
+.preview body>h1:first-child+h2,
+.preview body>h2:first-child,
+.preview body>h3:first-child,
+.preview body>h4:first-child,
+.preview body>h5:first-child,
+.preview body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0
+}
+
+.preview h1 p,
+.preview h2 p,
+.preview h3 p,
+.preview h4 p,
+.preview h5 p,
+.preview h6 p {
+    margin-top: 0
+}
+
+.preview li p.first {
+    display: inline-block
+}
+
+.preview ol,
+.preview ul {
+    padding-left: 30px
+}
+
+.preview ol :first-child,
+.preview ul :first-child {
+    margin-top: 0
+}
+
+.preview ol :last-child,
+.preview ul :last-child {
+    margin-bottom: 0
+}
+
+/* 
+.preview table {
+    background-color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+.preview table tr {
+    border-top: 0.01rem solid #ccc;
+    background-color: #333;
+}
+.preview table th {
+    padding: 1rem;
+}
+.preview table td {
+    padding: 0.5rem;
+    font-size: 10px;
+} */
+.preview table {
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.preview table tr {
+    border: 1px solid #ccc;
+    background-color: #333;
+}
+
+.preview table th {
+    padding: 1rem;
+    background-color: #616161;
+    color: white;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.preview table td {
+    padding: 0.5rem;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
+.preview table th {
+    font-weight: bold;
+}
+
+
+
+.preview img {
+    max-width: 100%
+}
+
+
+
+.preview a:first-child h1,
+.preview a:first-child h2,
+.preview a:first-child h3,
+.preview a:first-child h4,
+.preview a:first-child h5,
+.preview a:first-child h6,
+.preview body>h1:first-child,
+.preview body>h1:first-child+h2,
+.preview body>h2:first-child,
+.preview body>h3:first-child,
+.preview body>h4:first-child,
+.preview body>h5:first-child,
+.preview body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0
+}
+
+.preview h1 p,
+.preview h2 p,
+.preview h3 p,
+.preview h4 p,
+.preview h5 p,
+.preview h6 p {
+    margin-top: 0
+}
+
+.preview li p.first {
+    display: inline-block
+}
+
+.preview ol,
+.preview ul {
+    padding-left: 15px
+}
+
+.preview ol :first-child,
+.preview ul :first-child {
+    margin-top: 0;
+}
+
+.preview ol :last-child,
+.preview ul :last-child {
+    margin-bottom: 0;
+}
+
+.preview ul li ul li {
+    list-style-type: square;
+}
+.preview ul li ul li ul li {
+    list-style-type: circle;
+}
+
+.preview img {
+    max-width: 100%
+}
+
+
+
+@media (max-width: 600px) {
+    .main{
+        grid-template-columns: 1fr;
+    }
+}
