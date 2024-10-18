@@ -108,33 +108,16 @@ $('#markdown-input').on('input', ()=>{
 })
 
 
-$('#markdown-input').on('scroll', function() {
+$('#markdown-input').on('scroll', () => {
     $('#markdown-preview').scrollTop($(this).scrollTop());
     $('#markdown-preview').scrollLeft($(this).scrollLeft());
 });
 
-$('#markdown-preview').on('scroll', function() {
+$('#markdown-preview').on('scroll', () => {
     $('#markdown-input').scrollTop($(this).scrollTop());
     $('#markdown-input').scrollLeft($(this).scrollLeft());
 });
 
-
-// $('.ExportButton').click(()=> {
-//     console.log('clicked');
-//     $('.Options').toggleClass('active');
-//     const html = $('#markdown-preview').html();
-//     if(html.length > 0){
-//         const blob = new Blob([html], { type: 'text/html' });
-//         const url = URL.createObjectURL(blob);
-//         const a = document.createElement('a');
-//         a.href = url;
-//         a.download = 'markdown.html';
-//         document.body.appendChild(a);
-//         a.click();
-//         document.body.removeChild(a);
-//         URL.revokeObjectURL(url);
-//     }
-// })
 
 $(".ExportButton").click(function(){
     $('.Options').toggleClass('active');
@@ -174,7 +157,7 @@ const DownloadPDF = async ()=>{
     }
 
     try {
-        await html2pdf().from(clone).save('document.pdf');
+        await html2pdf().from(clone).save('Markdown.pdf');
         console.log("PDF Downloaded");
     } catch (err) {
         console.error("PDF Generation Error: ", err);
