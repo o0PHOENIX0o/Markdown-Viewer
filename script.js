@@ -71,12 +71,19 @@ const DownloadPDF = async ()=>{
         return;
     }
     const element = $('#markdown-preview')[0];
+    const clone = element.cloneNode(true);
+    const styles = window.getComputedStyle(element);
+
+    for (let style of styles) {
+        clone.style[style] = styles[style];
+    }
+
     try {
-        await html2pdf().from(element).save('document.pdf');
+        await html2pdf().from(clone).save('document.pdf');
         console.log("PDF Downloaded");
     } catch (err) {
         console.error("PDF Generation Error: ", err);
-        alert("PDF Generation Error: ");
+        alert(`PDF Generation Error: ${err.message || err}`);
     }
 }
 
