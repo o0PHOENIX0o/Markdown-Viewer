@@ -79,3 +79,24 @@ const DownloadPDF = async ()=>{
         alert("PDF Generation Error: ");
     }
 }
+
+
+const Clear = ()=>{
+    $('#markdown-input')[0].value = '';
+    $('#markdown-preview').html('');
+}
+
+const Copy = () => {
+    const content = $('#markdown-preview').html();
+
+    const textarea = document.createElement('textarea');
+    textarea.value = content;
+    document.body.appendChild(textarea); 
+    textarea.select(); 
+
+    document.execCommand('copy');
+
+    document.body.removeChild(textarea);
+
+    alert('Content copied to clipboard!');
+};

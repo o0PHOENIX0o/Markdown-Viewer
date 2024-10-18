@@ -21,7 +21,7 @@
         <div class="header">
             <h1>Md.edit</h1>
             <div class="DropDownButton">
-                <div class="ExportButton">
+                <div class="Button ExportButton">
                     <ion-icon name="chevron-down-outline"></ion-icon>
                     <p>Export</p>
                     <div class="Options">
@@ -35,10 +35,14 @@
 
     <div class="main">
         <div class="InputArea">
+            <h3>Markdown</h3>
+            <div class="Button" onclick="Clear()">Clear</div>
             <textarea id="markdown-input" placeholder="Type Markdown here..."></textarea>
         </div>
 
         <div class="Markdown">
+            <h3>preview</h3>
+            <div class="Button" onclick="Copy()">Copy</div>
             <div class="preview" id="markdown-preview"></div>
         </div>
     </div>
