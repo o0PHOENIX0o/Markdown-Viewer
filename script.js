@@ -108,12 +108,12 @@ $('#markdown-input').on('input', ()=>{
 })
 
 
-$('#markdown-input').on('scroll', () => {
+$('#markdown-input').on('scroll', function(){
     $('#markdown-preview').scrollTop($(this).scrollTop());
     $('#markdown-preview').scrollLeft($(this).scrollLeft());
 });
 
-$('#markdown-preview').on('scroll', () => {
+$('#markdown-preview').on('scroll', function(){
     $('#markdown-input').scrollTop($(this).scrollTop());
     $('#markdown-input').scrollLeft($(this).scrollLeft());
 });
